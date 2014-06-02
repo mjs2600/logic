@@ -39,4 +39,9 @@ defmodule Logic do
       Enum.flat_map(function1.(x), function2)
     end
   end
+
+  # TODO: Replace this with Logic.Variable
+  def variable(name) do
+    Logic.Variable.new(name)
+  end
 end

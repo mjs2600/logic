@@ -26,4 +26,14 @@ defmodule LogicTest do
     result = Logic.conjoin(&Logic.succeed/1, &Logic.succeed/1).(:q)
     assert result == [:q]
   end
+
+  test "variable" do
+    assert Logic.variable("foo") == Logic.Variable.new("foo")
+    assert Logic.Variable.new("foo") == %Logic.Variable{name: "foo"}
+  end
+
+  test "variable?" do
+    assert Logic.Data.variable?("string") == false
+    assert Logic.Data.variable?(Logic.variable("variable")) == true
+  end
 end
