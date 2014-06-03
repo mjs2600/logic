@@ -44,4 +44,14 @@ defmodule Logic do
   def variable(name) do
     Logic.Variable.new(name)
   end
+
+  # walk
+  def lookup(substitutions, variable) do
+    if Dict.has_key?(substitutions, variable) do
+      new_variable = Dict.get(substitutions, variable)
+      lookup(substitutions, new_variable)
+    else
+      variable
+    end
+  end
 end
