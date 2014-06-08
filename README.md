@@ -1,4 +1,4 @@
 Logic
 =====
 
-** TODO: Add description **
+A logic programming library for Elixir.
